@@ -1,0 +1,16 @@
+
+<nav>
+    <ul>
+        <li><a routerLink="/home">Home</a></li>
+        <li *ngIf="!authService.isLoggedIn"><a routerLink="/register">Register</a></li>
+        <li *ngIf="!authService.isLoggedIn"><a routerLink="/login">Login</a></li>
+        <li *ngIf="authService.isLoggedIn"><a routerLink="/csv-upload">CSV Upload</a></li>
+        <li *ngIf="authService.isLoggedIn"><a routerLink="/invoice">Invoice</a></li>
+        <li *ngIf="authService.isLoggedIn"><a routerLink="/manualentry">Manual Entry</a></li>
+        <li *ngIf="authService.isLoggedIn"><a routerLink="/payment-update">Payment Update</a></li>
+        <li *ngIf="authService.isLoggedIn"><a routerLink="/transaction-history">Transaction History</a></li> 
+        <li *ngIf="authService.isLoggedIn"><a routerLink="/login">Log out</a></li>
+    </ul>
+</nav>
+
+

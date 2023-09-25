@@ -1,0 +1,23 @@
+
+
+<div class="invoice">
+    <h2>Invoice Details</h2>
+    <label for="billingIDInput">Enter Billing ID:</label>
+    <input type="number" id="billingIDInput" [(ngModel)]="billingID" required>
+    <button (click)="loadInvoiceData()">Load Invoice Data</button>
+    <hr>
+</div>
+
+
+<div *ngFor="let invoice of invoices">
+    <p><strong>Invoice ID:</strong>{{invoice.invoiceID}}</p>
+    <p><strong>Billing ID:</strong>{{invoice.billingID}}</p>
+    <p><strong>Customer ID</strong>{{invoice.customerID}}</p>
+    <p><strong>Customer Name</strong>{{invoice.customerName}}</p>
+    <p><strong>Invoice Generated Date</strong>{{invoice.invoiceDate | date:'shortDate'}}</p>
+    <p><strong>Bill Due Date</strong>{{invoice.billDueDate | date:'shortDate'}}</p>
+    <p><strong>Total Amount</strong>{{invoice.totalAmount}}</p>
+    <p><strong>Early Payment Discount</strong>{{invoice.earlyPaymentDiscount}}</p>
+    <p><strong>Online Payment Discount:</strong>{{invoice.onlinePaymentDiscount}}</p>
+    <p><strong>Total Discount Amount:</strong>{{invoice.totalDiscountAmount}}</p>
+</div>

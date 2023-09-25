@@ -1,0 +1,37 @@
+
+nav {
+    background-color: #1976D2; 
+    color: #fff; 
+    padding: 20px 0; 
+    width: 100%; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    font-family: Arial, sans-serif; 
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    display: inline;
+    margin-right: 30px; 
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff; 
+    font-weight: bold;
+    font-size: 16px; 
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: #FF5722; 
+  }
+  
+
+  a.router-link-active {
+    color: #FF5722; 
+  }

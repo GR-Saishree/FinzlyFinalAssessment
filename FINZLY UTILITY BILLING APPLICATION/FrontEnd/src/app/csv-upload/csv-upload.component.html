@@ -1,0 +1,10 @@
+<h1>Bulk Upload Customer Details</h1>
+<div class="container">
+<form (ngSubmit)="uploadCSV()" #csvForm="ngForm">
+    <input type="file" (change)="onFileSelected($event)" accept=".csv" required />
+    <button type="submit" [disabled]="!csvFile">Upload CSV</button>
+</form>
+</div>
+
+
+
