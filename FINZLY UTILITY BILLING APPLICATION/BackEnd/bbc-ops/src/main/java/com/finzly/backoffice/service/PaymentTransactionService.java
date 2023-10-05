@@ -27,10 +27,17 @@ public class PaymentTransactionService {
 
 	// A method which sends transaction ID and status to DAO layer
 	public String markPaymentMadeInCash(Long transactionid, String status) {
+		
 		List<paymenttransaction> transactions = paymentTransactionDao.getPaymentDetailsByTransactionId(transactionid);
 		
 		if(transactions.isEmpty()) {
 			throw new NoTransactionFoundException("No Transaction is Found for specified Transaction ID");
+		}
+
+		List<String> validStatusValues = Arrays.asList("success","failure","pending");
+
+		if(!validStatusValues.contains(status.toLowerCase())){
+			return "Invalid status value. Please use 'success' , 'failure' , 'pending' ";
 		}
 		
 		boolean updated = false;
